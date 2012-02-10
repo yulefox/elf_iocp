@@ -37,8 +37,11 @@ unsigned int __stdcall send(void *args)
         msg = net_message_create(1);
         net_message_append_raw(msg, buf, sizeof(buf));
         net_message_append_raw(msg, buf, sizeof(buf));
-        if (net_send(-1, msg)) {
+        if (net_send(-1, msg) == 0) {
             Sleep(5);
+        } else {
+            net_message_destroy(msg);
+            break;
         }
     }
     return 0;
@@ -64,15 +67,19 @@ static BOOL ctrl_handler(DWORD type)
 
 int main(void)
 {
+    struct thread_t *ts;
+
     net_init();
     LOG_INFO("test.net", "-== CLIENT START ==-");
     net_entity_start(1);
+    thread_create(&ts, send, NULL);
     if (SetConsoleCtrlHandler((PHANDLER_ROUTINE)ctrl_handler, TRUE)) {
         LOG_INFO("test.net", "Console control handler is installed.");
         while (running) {
             Sleep(100);
         }
     }
+    thread_destroy(ts);
     net_fini();
     return 0;
 }

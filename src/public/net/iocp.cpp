@@ -201,7 +201,9 @@ net_iocp_send(struct iocp_t *iocp, SOCKET s, struct message_t *msg)
             assert(itr);
             hash_val(itr, (void **)&con);
             assert(con);
-            net_context_send(iocp, con, msg);
+            if ((res = net_context_send(iocp, con, msg)) != 0) {
+                break;
+            }
         }
     } else {
         con = (struct context_t *)hash_find_n(iocp->contexts, (int)s);

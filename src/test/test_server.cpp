@@ -31,7 +31,6 @@ mynet_proc_event(SOCKET s, int type, int res, void *args)
     switch (type) {
     case NIT_ACPT: /* 主动断开已连接 socket */
         net_onnotify(s, type, res, args);
-        net_close(&s);
         break;
     case NIT_SNDF: /* 统计消息发送量 */
         break;
