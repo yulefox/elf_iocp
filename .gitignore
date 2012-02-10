@@ -1,0 +1,29 @@
+*.swp
+
+# User-specific files
+*.suo
+*.user
+*.sln.docstates
+
+# Build results
+tmp/
+[Dd]ebug/
+[Rr]elease/
+*_i.c
+*_p.c
+*.ilk
+*.meta
+*.obj
+*.pch
+*.pdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.vspscc
+.builds
+

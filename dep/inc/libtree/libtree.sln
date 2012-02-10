@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libtree", "libtree.vcproj", "{B78CD33C-4851-4EF5-902C-D96F475A7D68}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test_libtree", "test_libtree\test_libtree.vcproj", "{BD88CD75-8719-4C7D-BD6C-DCDC1450607C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B78CD33C-4851-4EF5-902C-D96F475A7D68} = {B78CD33C-4851-4EF5-902C-D96F475A7D68}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B78CD33C-4851-4EF5-902C-D96F475A7D68}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B78CD33C-4851-4EF5-902C-D96F475A7D68}.Debug|Win32.Build.0 = Debug|Win32
+		{B78CD33C-4851-4EF5-902C-D96F475A7D68}.Release|Win32.ActiveCfg = Release|Win32
+		{B78CD33C-4851-4EF5-902C-D96F475A7D68}.Release|Win32.Build.0 = Release|Win32
+		{BD88CD75-8719-4C7D-BD6C-DCDC1450607C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BD88CD75-8719-4C7D-BD6C-DCDC1450607C}.Debug|Win32.Build.0 = Debug|Win32
+		{BD88CD75-8719-4C7D-BD6C-DCDC1450607C}.Release|Win32.ActiveCfg = Release|Win32
+		{BD88CD75-8719-4C7D-BD6C-DCDC1450607C}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
