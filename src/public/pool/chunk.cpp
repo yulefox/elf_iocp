@@ -69,7 +69,7 @@ chunk_append(struct chunk_t *c, void *buf, size_t size)
     rem = size;
     cw = min(cr, rem);
     memcpy((char *)(cb->buf) + cp, buf, cw);
-    if (cr > rem) { /* enough */
+    if (cr >= rem) { /* enough */
         c->pos_wr += cw;
     } else {
         while ((rem -= cw) > 0) {
