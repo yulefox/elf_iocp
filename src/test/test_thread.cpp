@@ -45,8 +45,8 @@ int main(void)
 
     pool_init();
     mutex_init(&l);
-    mutex_lock(l);
-    mutex_unlock(l);
+    mutex_lock(&l);
+    mutex_unlock(&l);
     mutex_init(&l);
     thread_create(&tr, read, NULL);
     thread_create(&tw, write, NULL);

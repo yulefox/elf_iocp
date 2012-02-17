@@ -27,9 +27,9 @@ ELF_API int mutex_init(mutex_t *m);
 
 ELF_API void mutex_fini(mutex_t *m);
 
-ELF_API void mutex_lock(mutex_t m);
+ELF_API void mutex_lock(mutex_t *m);
 
-ELF_API void mutex_unlock(mutex_t m);
+ELF_API void mutex_unlock(mutex_t *m);
 
 END_C_DECLS
 

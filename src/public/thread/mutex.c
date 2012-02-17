@@ -32,23 +32,23 @@ mutex_fini(mutex_t *m)
 }
 
 void
-mutex_lock(mutex_t m)
+mutex_lock(mutex_t *m)
 {
 #ifdef _WIN32
-    EnterCriticalSection(&m);
+    EnterCriticalSection(m);
 #else
-    int rc = pthread_mutex_lock(&m);
+    int rc = pthread_mutex_lock(m);
     if (rc) assert(rc);
 #endif /* _WIN32 */
 }
 
 void
-mutex_unlock(mutex_t m)
+mutex_unlock(mutex_t *m)
 {
 #ifdef _WIN32
-    LeaveCriticalSection(&m);
+    LeaveCriticalSection(m);
 #else
-    int rc = pthread_mutex_unlock(&m);
+    int rc = pthread_mutex_unlock(m);
     if (rc) assert(rc);
 #endif /* _WIN32 */
 }

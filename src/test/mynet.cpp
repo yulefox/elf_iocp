@@ -94,10 +94,10 @@ mynet_proc_msg(void)
     std::deque<CMessage *> msgs;
     std::deque<CMessage *>::iterator itr;
 
-    mutex_lock(lock);
+    mutex_lock(&lock);
     msgs = msg_queue;
     msg_queue.clear();
-    mutex_unlock(lock);
+    mutex_unlock(&lock);
 
     if (!msgs.empty()) {
         for (itr = msgs.begin(); itr != msgs.end(); ++itr) {
@@ -159,9 +159,9 @@ mynet_peer_remove(int type, int sock)
 int
 mynet_message_push(CMessage *msg)
 {
-    mutex_lock(lock);
+    mutex_lock(&lock);
     msg_queue.push_back(msg);
-    mutex_unlock(lock);
+    mutex_unlock(&lock);
     return 0;
 }
 
